@@ -17,10 +17,12 @@ def signup(request):
             # user = User.objects.create_user(
             #     username=username, password=password
             # )
+
             # Login
             login(request, user)
+
             # Redirect somewhere
-            return redirect("registration_list")
+            return redirect("home")
     # GET
     else:
         form = UserCreationForm()
