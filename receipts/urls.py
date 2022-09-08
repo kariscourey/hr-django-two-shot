@@ -4,8 +4,11 @@ from django.urls import path
 
 from receipts.views import (
     list_receipts,
+    create_receipts,
 )
 
 urlpatterns = [
     path("", list_receipts, name="home"),
+    path("create/", create_receipts, name="create_receipt"),
+
 ]
