@@ -29,6 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Set login/logout redirects
+LOGIN_REDIRECT_URL = "home"
+
 
 # Application definition
 
