@@ -8,6 +8,7 @@ from receipts.views import (
     list_categories,
     list_accounts,
     create_categories,
+    create_accounts,
 )
 
 urlpatterns = [
@@ -16,5 +17,5 @@ urlpatterns = [
     path("categories/", list_categories, name="list_categories"),
     path("accounts/", list_accounts, name="list_account"),
     path("categories/create/", create_categories, name="create_category"),
-
+    path("accounts/create/", create_accounts, name="create_account"),
 ]
