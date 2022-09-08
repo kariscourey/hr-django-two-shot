@@ -7,4 +7,4 @@ def list_receipts(request):
     context = {
         "receipt_list": receipt_list,
     }
-    return render(request, "receipt/list.html", context)
+    return render(request, "receipts/list.html", context)
