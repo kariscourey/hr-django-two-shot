@@ -30,3 +30,21 @@ def create_receipts(request):
     }
 
     return render(request, "receipts/create.html", context)
+
+
+@login_required
+def list_categories(request):
+    category_list = ExpenseCategory.objects.filter(owner=request.user)
+    context = {
+        "category_list": category_list,
+    }
+    return render(request, "categories/list.html", context)
+
+
+@login_required
+def list_accounts(request):
+    account_list = Account.objects.filter(owner=request.user)
+    context = {
+        "account_list": account_list,
+    }
+    return render(request, "accounts/list.html", context)

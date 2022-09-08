@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main>
+    <h1>My Categories</h1>
+    {% if category_list %}
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Number of receipts</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in category_list %}
+            <tr>
+                <td>{{ i.name }}</td>
+                <td>{{ i.receipts.all | length }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    No categories.
+    {% endif %}
+</main>
+
+{% endblock content %}
