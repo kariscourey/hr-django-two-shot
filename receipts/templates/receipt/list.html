@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main>
+    <h1>My Receipts</h1>
+    {% if receipt_list %}
+    <table>
+        <thead>
+            <tr>
+                <th>Vendor</th>
+                <th>Total</th>
+                <th>Tax</th>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Account</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in receipt_list %}
+            <tr>
+                <td>{{ i.vendor }}</td>
+                <td>{{ i.total }}</td>
+                <td>{{ i.tax }}</td>
+                <td>{{ i.date }}</td>
+                <td>{{ i.category }}</td>
+                <td>{{ i.account }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    No receipts.
+    {% endif %}
+</main>
+
+{% endblock content %}

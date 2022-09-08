@@ -9,7 +9,7 @@ class ExpenseCategory(models.Model):
     )
 
     def __str__(self):
-        self.name
+        return self.name
 
 
 class Receipt(models.Model):
@@ -36,4 +36,4 @@ class Account(models.Model):
     )
 
     def __str__(self):
-        self.name
+        return self.name
