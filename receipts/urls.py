@@ -7,11 +7,14 @@ from receipts.views import (
     create_receipts,
     list_categories,
     list_accounts,
+    create_categories,
 )
 
 urlpatterns = [
     path("", list_receipts, name="home"),
     path("create/", create_receipts, name="create_receipt"),
-    path("categories/", list_categories, name="list_category"),
+    path("categories/", list_categories, name="list_categories"),
     path("accounts/", list_accounts, name="list_account"),
+    path("categories/create/", create_categories, name="create_category"),
+
 ]

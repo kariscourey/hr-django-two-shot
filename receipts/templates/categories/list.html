@@ -4,6 +4,9 @@
 
 <main>
     <h1>My Categories</h1>
+    <p>
+        <a href="{% url 'create_category'%}">Create</a> a category.
+    </p>
     {% if category_list %}
     <table>
         <thead>
