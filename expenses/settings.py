@@ -31,7 +31,9 @@ ALLOWED_HOSTS = []
 
 # Set login/logout redirects
 LOGIN_REDIRECT_URL = "login"
-LOGIN_URL = "login"
+# LOGIN_URL = "login"  # difference? unnecessary
+LOGOUT_REDIRECT_URL = "login"
+
 
 
 # Set date formats
