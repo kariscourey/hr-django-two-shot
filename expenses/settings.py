@@ -30,8 +30,12 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Set login/logout redirects
-LOGIN_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL = "login"
+LOGIN_URL = "login"
 
+
+# Set date formats
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
 # Application definition
 
