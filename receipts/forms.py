@@ -12,12 +12,15 @@ class ReceiptForm(forms.ModelForm):
         # form.fields['categories'].queryset = Category.objects.filter(profile=self.request.user.profile)
         # return form
 
-        current_user = kwargs.pop('current_user', None)
+        current_user = kwargs.pop("current_user", None)
         super(ReceiptForm, self).__init__(*args, **kwargs)
         if current_user:
-            self.fields['account'].queryset = self.fields['account'].queryset.filter(owner_id=current_user.id)
-            self.fields['category'].queryset = self.fields['category'].queryset.filter(owner_id=current_user.id)
-
+            self.fields["account"].queryset = self.fields[
+                "account"
+            ].queryset.filter(owner_id=current_user.id)
+            self.fields["category"].queryset = self.fields[
+                "category"
+            ].queryset.filter(owner_id=current_user.id)
 
 
 class ExpenseCategoryForm(forms.ModelForm):
