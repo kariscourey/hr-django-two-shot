@@ -15,15 +15,16 @@ def list_receipts(request):
 
 @login_required
 def create_receipts(request):
+    user = request.user
     if request.method == "POST":
-        form = ReceiptForm(current_user_id=request.user.id, request=request.POST)
+        form = ReceiptForm(request.POST, current_user=user)
         if form.is_valid():
             item = form.save(commit=False)
             item.purchaser = request.user
             item.save()
         return redirect("home")
     else:
-        form = ReceiptForm(current_user_id=request.user.id)
+        form = ReceiptForm(current_user=user)
 
     context = {
         "form": form
