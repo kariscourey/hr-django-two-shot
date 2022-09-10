@@ -26,9 +26,7 @@ def create_receipts(request):
     else:
         form = ReceiptForm(current_user=user)
 
-    context = {
-        "form": form
-    }
+    context = {"form": form}
 
     return render(request, "receipts/create.html", context)
 
@@ -63,9 +61,7 @@ def create_categories(request):
     else:
         form = ExpenseCategoryForm()
 
-    context = {
-        "form": form
-    }
+    context = {"form": form}
 
     return render(request, "categories/create.html", context)
 
@@ -82,8 +78,6 @@ def create_accounts(request):
     else:
         form = AccountForm()
 
-    context = {
-        "form": form
-    }
+    context = {"form": form}
 
     return render(request, "accounts/create.html", context)
