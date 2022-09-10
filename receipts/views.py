@@ -2,6 +2,7 @@
 from django.urls import reverse_lazy
 
 from receipts.models import ExpenseCategory, Receipt, Account
+
 # from django.contrib.auth.decorators import login_required
 # from receipts.forms import ReceiptForm, ExpenseCategoryForm, AccountForm
 
@@ -59,8 +60,12 @@ class ReceiptCreateView(LoginRequiredMixin, CreateView):
     # TODO
     def get_form(self, *args, **kwargs):
         form = super(ReceiptCreateView, self).get_form(*args, **kwargs)
-        form.fields['category'].queryset = Receipt.objects.filter(purchaser=self.request.user)
-        form.fields['account'].queryset = Receipt.objects.filter(purchaser=self.request.user)
+        form.fields["category"].queryset = ExpenseCategory.objects.filter(
+            owner=self.request.user
+        )
+        form.fields["account"].queryset = Account.objects.filter(
+            owner=self.request.user
+        )
         return form
 
 
