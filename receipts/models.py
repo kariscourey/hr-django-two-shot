@@ -41,3 +41,7 @@ class Account(models.Model):
 
 # class Pat(models.Model):
 #     name = models.CharField(max_length=20)
+
+
+class Car(models.Model):
+    color = models.CharField(max_length=100)
